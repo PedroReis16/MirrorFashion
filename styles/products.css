@@ -1,8 +1,8 @@
-.news {
+.news,.bestSeller {
   margin: 16px 0px 0px 0px;
   user-select: none;
 }
-#newsTitle {
+.sectionTitle {
   font-weight: bold;
   font-size: 32px;
 }
@@ -63,19 +63,35 @@
   padding: 8px;
   border-radius: 12px;
   margin: 4px 0px 4px 0px;
+  height: 330px;
 }
 
 .cardImage {
   width: 240px;
   border-radius: 12px;
 }
-
+.card p{
+  display: none;
+}
 .card:hover {
   box-shadow: 0 4px 4px #999;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   cursor: pointer;
 }
 
+.card:hover p {
+  display: block;
+}
+.productDescription{
+  margin: 8px 0px 0px 0px;
+  font-weight: 600;
+  font-size: 20px;
+}
+.productValue{
+  margin: 4px 0px;
+  font-size: 15px;
+  text-align: end;
+}
 .seeMore{
   font-size: 18px;
   text-align: end;
