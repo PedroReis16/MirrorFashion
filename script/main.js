@@ -1,8 +1,9 @@
+//carrosel
 document.addEventListener("DOMContentLoaded", function () {
     const slideContainer = document.querySelector(".carouselSlide");
 
     let currentIndex = 0;
-    const intervalTime = 3000; // Intervalo em milissegundos (5 segundos)
+    const intervalTime = 5000; // Intervalo em milissegundos (5 segundos)
 
     function showSlide(index) {
         const totalSlides = document.querySelectorAll(".carouselSlide img").length;
@@ -26,6 +27,5 @@ document.addEventListener("DOMContentLoaded", function () {
         setInterval(nextSlide, intervalTime);
     }
 
-    // Inicia o carrossel automaticamente
     startCarousel();
 });

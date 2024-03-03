@@ -1,11 +1,9 @@
 .carousel {
   position: relative;
   overflow: hidden;
-  margin: 16px 10% 0px 10%;
   max-width: 1920px;
   height: 600px;
   border-radius: 12px;
-
 }
 
 .carouselSlide {

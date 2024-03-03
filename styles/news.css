@@ -1,0 +1,76 @@
+.news {
+  margin: 16px 0px 0px 0px;
+}
+#newsTitle {
+  font-weight: bold;
+  font-size: 32px;
+}
+.newsCarousel {
+  position: relative;
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex;
+  margin: 16px 0px 0px 0px;
+  overflow: hidden;
+}
+
+.newsCarouselSlide {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carouselButtons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  border-color: transparent;
+  padding: 0px;
+}
+.carouselButtons:hover {
+  cursor: pointer;
+}
+#prevNewsButton {
+  left: 0;
+}
+#prevNewsButton::before {
+  content: "arrow_back_ios_new";
+  font-family: "Material Icons";
+  display: inline-block;
+  margin-right: 4px;
+  margin-top: 2px;
+}
+#nextNewsButton {
+  right: 0;
+}
+#nextNewsButton::before {
+  content: "arrow_forward_ios_new";
+  font-family: "Material Icons";
+  display: inline-block;
+  margin-left: 4px;
+  margin-top: 2px;
+}
+
+.card {
+  display: inline-block;
+  padding: 8px;
+  border-radius: 12px;
+  margin: 4px 0px 4px 0px;
+}
+
+.cardImage {
+  width: 240px;
+  border-radius: 12px;
+}
+
+.card:hover {
+  box-shadow: 0 4px 4px #999;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+

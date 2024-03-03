@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url("./home_header.css");
 @import url("./carousel.css");
+@import url("./news.css");
 @import url("./about_style.css");
 
 body{
@@ -14,5 +16,7 @@ a{
 }
 main{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    margin: 16px 10% 0px 10%;
 }
