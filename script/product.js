@@ -18,4 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     nextButton.addEventListener("click", () => newsCarousel.nextSlide());
     prevButton.addEventListener("click", () => newsCarousel.prevSlide());
+
+    const nextSellerButton = document.getElementById("nextSellerButton");
+    const prevSellerButton = document.getElementById("prevSellerButton");
+
+    const sellerCarousel = new Carousel("sellerSlide",newsList);
+    nextSellerButton.addEventListener("click", () => newsCarousel.nextSlide());
+    nextSellerButton.addEventListener("click", () => newsCarousel.prevSlide());
 });
