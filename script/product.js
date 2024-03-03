@@ -23,6 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const prevSellerButton = document.getElementById("prevSellerButton");
 
     const sellerCarousel = new Carousel("sellerSlide",newsList);
-    nextSellerButton.addEventListener("click", () => newsCarousel.nextSlide());
-    nextSellerButton.addEventListener("click", () => newsCarousel.prevSlide());
+    nextSellerButton.addEventListener("click", () => sellerCarousel.nextSlide());
+    prevSellerButton.addEventListener("click", () => sellerCarousel.prevSlide());
 });
