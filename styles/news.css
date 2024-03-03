@@ -1,5 +1,6 @@
 .news {
   margin: 16px 0px 0px 0px;
+  user-select: none;
 }
 #newsTitle {
   font-weight: bold;
@@ -33,6 +34,8 @@
 }
 .carouselButtons:hover {
   cursor: pointer;
+  box-shadow: 0 4px 4px #999;
+  transition: all 0.3s ease-in-out;
 }
 #prevNewsButton {
   left: 0;
@@ -73,4 +76,17 @@
   cursor: pointer;
 }
 
-
+.seeMore{
+  font-size: 18px;
+  text-align: end;
+}
+.seeMore::after{
+  content: "arrow_forward";
+  font-family: "Material Icons";
+  display: inline-block;
+  margin: 0px 0px 1px 2px ;
+  vertical-align: middle;
+}
+.seeMore:hover{
+  text-decoration: underline;
+}
