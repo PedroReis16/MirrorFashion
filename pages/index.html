@@ -13,58 +13,85 @@
   </head>
   <body>
     <header class="header">
-      <div class="logo">
-        <a href="index.html"><img id="logoImage" src="/images/logo.png" /></a>
-      </div>
-      <div class="inputs">
-        <div class="search">
-          <input
-            type="text"
-            placeholder="Buscar"
-            name=""
-            id=""
-            class="searchBar"
-          />
-          <button id="searchButton">
-            <span class="material-symbols-outlined">search</span>
-          </button>
+      <div class="content">
+        <div class="logo">
+          <a href="index.html"><img id="logoImage" src="/images/logo.png" /></a>
         </div>
-        <div class="user">
-          <span id="userAvatar" class="material-symbols-outlined">
-            account_circle
+        <div class="inputs">
+          <div class="search">
+            <input
+              type="text"
+              placeholder="Buscar"
+              name=""
+              id=""
+              class="searchBar"
+            />
+            <button id="searchButton">
+              <span class="material-symbols-outlined">search</span>
+            </button>
+          </div>
+          <div class="user">
+            <span id="userAvatar" class="material-symbols-outlined">
+              account_circle
+            </span>
+            <p id="loginText">
+              Faça <a id="loginLink" href="">LOGIN</a> ou <br />crie seu
+              <a id="registerLink" href="">CADASTRO</a>
+            </p>
+          </div>
+        </div>
+        <div class="navOptions">
+          <nav class="headerNav">
+            <a href="" class="headerLinks"
+              ><span id="wishList" class="material-symbols-outlined">
+                favorite
+              </span>
+            </a>
+            <a class="headerLinks" href="">
+              <span id="loyaltyCard" class="material-symbols-outlined">
+                credit_card
+              </span>
+            </a>
+            <a class="headerLinks" href="about.html">
+              <span id="info" class="material-symbols-outlined"> info </span>
+            </a>
+            <a class="headerLinks" href="">
+              <span id="help" class="material-symbols-outlined"> help </span>
+            </a>
+          </nav>
+        </div>
+        <a class="headerLinks" href="">
+          <span id="cart" class="material-symbols-outlined">
+            shopping_cart
           </span>
-          <p id="loginText">
-            Faça <a id="loginLink" href="">LOGIN</a> ou <br />crie seu
-            <a id="registerLink" href="">CADASTRO</a>
-          </p>
-        </div>
+        </a>
       </div>
-      <div class="navOptions">
-        <nav class="headerNav">
-          <a href="" class="headerLinks"
-            ><span id="wishList" class="material-symbols-outlined">
-              favorite
-            </span>
-          </a>
-          <a class="headerLinks" href="">
-            <span id="loyaltyCard" class="material-symbols-outlined">
-              credit_card
-            </span>
-          </a>
-          <a class="headerLinks" href="">
-            <span id="info" class="material-symbols-outlined"> info </span>
-          </a>
-          <a class="headerLinks" href="">
-            <span id="help" class="material-symbols-outlined"> help </span>
-          </a>
-        </nav>
+      <div class="departaments">
+        <p id="blouses" class="departamentOption"><a href="">blusas</a></p>
+        <p id="shirts" class="departamentOption"><a href="">camisas</a></p>
+        <p id="legs" class="departamentOption"><a href="">calças</a></p>
+        <p id="skirt" class="departamentOption"><a href="">saias</a></p>
+        <p id="dress" class="departamentOption"><a href="">vestidos</a></p>
+        <p id="shoes" class="departamentOption"><a href="">sapatos</a></p>
+        <p id="bags" class="departamentOption">
+          <a href="">bolsas e carteiras</a>
+        </p>
+        <p id="acessories" class="departamentOption">
+          <a href="">acessórios</a>
+        </p>
       </div>
-      <a class="headerLinks" href="">
-        <span id="cart" class="material-symbols-outlined"> shopping_cart </span>
-      </a>
     </header>
 
-    <main></main>
+    <main>
+      <div class="carousel">
+        <div class="carouselSlide">
+          <img class="bannerImage" src="/images/banner2.png" alt="" />
+          <img class="bannerImage" src="/images/banner.png" alt="" />
+          <img class="bannerImage" src="/images/banner1.png" alt="" />
+          <img class="bannerImage" src="/images/banner3.png" alt="" />
+        </div>
+      </div>
+    </main>
     <footer></footer>
     <script src="/script/main.js"></script>
   </body>

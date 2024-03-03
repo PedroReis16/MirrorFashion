@@ -1,0 +1,19 @@
+.carousel {
+  position: relative;
+  overflow: hidden;
+  margin: 16px 10% 0px 10%;
+  max-width: 1920px;
+  height: 600px;
+  border-radius: 12px;
+
+}
+
+.carouselSlide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.bannerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
