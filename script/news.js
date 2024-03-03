@@ -9,80 +9,76 @@ document.addEventListener("DOMContentLoaded", function () {
         { image: "/images/produtos/foto10-rosa.png", description: "Camisa manga longa", value: 69.99 },
     ];
 
-    function criarCard(imageSrc, altText, text, value) {
+    function criarCard(item) {
         var card = document.createElement("div");
         card.className = "card";
+    
         var image = document.createElement("img");
-        image.src = imageSrc;
-        image.alt = altText;
+        image.src = item.image;
+        image.alt = item.description;
         image.className = "cardImage";
         card.appendChild(image);
+    
         var description = document.createElement("p");
         description.className = "productDescription";
-        description.textContent = text;
+        description.textContent = item.description;
         card.appendChild(description);
+    
         var productValue = document.createElement("p");
         productValue.className = "productValue";
-        productValue.textContent = `R$ ${value}`;
+        productValue.textContent = `R$ ${item.value.toFixed(2)}`;
         card.appendChild(productValue);
-
-        var container = document.getElementById("newsSlide");
-        container.appendChild(card);
+    
+        return card;
     }
-
-    newsList.forEach(element => {
-        criarCard(element.image, "Descrição da imagem", element.description, element.value);
-    });
-
+    
+    function updateCarousel() {
+        const cards = document.querySelectorAll(".card");
+        const transitionDuration = 1000;
+    
+        cards.forEach(card => {
+            card.style.transition = `transform ${transitionDuration}ms ease-in-out`;
+            card.style.transform = "translateX(-100%)";
+        });
+    
+        setTimeout(() => {
+            cards.forEach(card => carouselContent.removeChild(card));
+    
+            for (let i = currentIndex; i < currentIndex + totalItems; i++) {
+                const index = i % totalItems;
+                const card = criarCard(newsList[index]);
+                carouselContent.appendChild(card);
+            }
+    
+            setTimeout(() => {
+                cards.forEach(card => {
+                    card.style.transition = "none";
+                    card.style.transform = "translateX(0)";
+                });
+            }, 0);
+        }, transitionDuration);
+    }
+    
     let currentIndex = 0;
     const carouselContent = document.getElementById("newsSlide");
-    const totalItems = document.querySelectorAll(".card").length;
-
+    const totalItems = newsList.length;
+    
     function nextSlide() {
-        const nextIndex = (currentIndex + 1) % totalItems;
-
-        if (nextIndex !== 0 || currentIndex !== totalItems - 1) {
-            // Se não estiver no último item, execute a transição
-            const firstCard = carouselContent.firstElementChild;
-            carouselContent.removeChild(firstCard);
-
-            const newCard = document.createElement("div");
-            newCard.className = "card";
-            const newImage = document.createElement("img");
-            newImage.src = newsList[nextIndex].image;
-            newImage.alt = "Descrição da imagem";
-            newImage.className = "cardImage";
-            newCard.appendChild(newImage);
-            carouselContent.appendChild(newCard);
-
-            currentIndex = nextIndex;
-        }
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCarousel();
     }
-
+    
     function prevSlide() {
-        const prevIndex = (currentIndex + totalItems - 1) % totalItems;
-
-        if (prevIndex !== totalItems - 1 || currentIndex !== 0) {
-            // Se não estiver no primeiro item, execute a transição
-            const lastCard = carouselContent.lastElementChild;
-            carouselContent.removeChild(lastCard);
-
-            const newCard = document.createElement("div");
-            newCard.className = "card";
-            const newImage = document.createElement("img");
-            newImage.src = newsList[prevIndex].image;
-            newImage.alt = "Descrição da imagem";
-            newImage.className = "cardImage";
-            newCard.appendChild(newImage);
-            carouselContent.insertBefore(newCard, carouselContent.firstChild);
-
-            currentIndex = prevIndex;
-        }
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        updateCarousel();
     }
-
+    
     const nextButton = document.getElementById("nextNewsButton");
     const prevButton = document.getElementById("prevNewsButton");
-
+    
     nextButton.addEventListener('click', nextSlide);
     prevButton.addEventListener('click', prevSlide);
+    
+    // Inicialização
+    updateCarousel();
 });

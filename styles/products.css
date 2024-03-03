@@ -1,6 +1,7 @@
 .news,.bestSeller {
   margin: 16px 0px 0px 0px;
   user-select: none;
+  padding: 0px 0px 0px 0px;
 }
 .sectionTitle {
   font-weight: bold;
